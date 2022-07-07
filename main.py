@@ -28,6 +28,7 @@ def send_welcome(message):
         connect.commit()
     # else: возможно дописать что то
 
+
 @bot.message_handler(commands=['ad'])
 def ad(message):
     connect = sqlite3.connect('users.db')  # создали файл
@@ -47,7 +48,7 @@ def ad(message):
         except Exception as ex:
             print(ex, 'bot was deleted')
             cursor.execute(f"DELETE FROM us_id")
-            connect.commit()
+
 
 # polling
 bot.polling(none_stop=True)
