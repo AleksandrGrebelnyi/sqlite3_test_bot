@@ -1,9 +1,9 @@
 import telebot
-import conf
+# import conf
 import sqlite3
 
 # bot
-bot = telebot.TeleBot(conf.bot_token, parse_mode='HTML')
+bot = telebot.TeleBot('TOKEN', parse_mode='HTML')
 user_info = {}
 
 
@@ -40,7 +40,7 @@ def ad(message):
     all_id = cursor.fetchall()
     print(f'Number of strings: {len(all_id)}')
     print(f'Display every string ')
-    if message.chat.id == conf.my_id:
+    if message.chat.id == MY_ID:  # если ставить например мой id значит только я смогу делать рассылку
         try:
             for user in all_id:
                 bot.send_message(*list(map(int, user)), message.text)
