@@ -1,6 +1,6 @@
 import telebot
 # import conf
-import sqlite3
+import sqlite3  # импортируем и будем делать БД с помощью sqlite3
 
 # bot
 bot = telebot.TeleBot('TOKEN', parse_mode='HTML')
