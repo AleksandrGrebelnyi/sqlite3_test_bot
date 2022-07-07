@@ -28,10 +28,10 @@ def send_welcome(message):
         connect.commit()
     # else: возможно дописать что то
 
-
+# функция для рассылок сообщений всем, кто активировал бот
 @bot.message_handler(commands=['ad'])
 def ad(message):
-    connect = sqlite3.connect('users.db')  # создали файл
+    connect = sqlite3.connect('users.db')  # подключились к файлу
     cursor = connect.cursor()
     print('Switch on')
     # client_id = message.from_user.id
